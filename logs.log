@@ -1,0 +1,274 @@
+2022-10-14 13:38:58,654 INFO com.testtask.TestTaskApplication [main] Starting TestTaskApplication using Java 17.0.2 on DESKTOP-3RBE9JS with PID 11992 (C:\Users\plwkc\IdeaProjects\test-task\target\classes started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 13:38:58,667 INFO com.testtask.TestTaskApplication [main] No active profile set, falling back to default profiles: default
+2022-10-14 13:39:00,831 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-14 13:39:00,843 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-14 13:39:00,844 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-10-14 13:39:00,961 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-14 13:39:00,961 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2197 ms
+2022-10-14 13:39:01,454 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 13:39:01,794 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-14 13:39:01,795 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 13:39:01,815 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 13:39:01,858 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 13:39:02,105 INFO com.testtask.TestTaskApplication [main] Started TestTaskApplication in 4.549 seconds (JVM running for 5.754)
+2022-10-14 13:39:23,409 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 13:39:23,409 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-14 13:39:23,411 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2022-10-14 13:39:23,445 INFO com.testtask.service.impl.EmployeeServiceImpl [http-nio-8080-exec-1] List of employees with the specific name is going to be obtained
+2022-10-14 13:40:03,691 INFO com.testtask.service.impl.EmployeeServiceImpl [http-nio-8080-exec-3] List of employees with the specific name is going to be obtained
+2022-10-14 13:44:58,260 INFO com.testtask.TestTaskApplication [main] Starting TestTaskApplication using Java 17.0.2 on DESKTOP-3RBE9JS with PID 7868 (C:\Users\plwkc\IdeaProjects\test-task\target\classes started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 13:44:58,265 INFO com.testtask.TestTaskApplication [main] No active profile set, falling back to default profiles: default
+2022-10-14 13:44:59,864 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-14 13:44:59,865 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-10-14 13:44:59,956 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-14 13:45:00,462 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 13:45:00,821 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 13:45:00,838 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 13:45:00,880 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 13:45:01,146 INFO com.testtask.TestTaskApplication [main] Started TestTaskApplication in 3.43 seconds (JVM running for 4.649)
+2022-10-14 13:59:33,471 INFO com.testtask.controller.DepartmentControllerTest [main] Starting DepartmentControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 17196 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 13:59:33,477 INFO com.testtask.controller.DepartmentControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 13:59:36,055 INFO com.testtask.controller.DepartmentControllerTest [main] Started DepartmentControllerTest in 3.234 seconds (JVM running for 5.1)
+2022-10-14 14:00:53,520 INFO com.testtask.controller.DepartmentControllerTest [main] Starting DepartmentControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 10500 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:00:53,524 INFO com.testtask.controller.DepartmentControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:00:56,103 INFO com.testtask.controller.DepartmentControllerTest [main] Started DepartmentControllerTest in 3.294 seconds (JVM running for 4.992)
+2022-10-14 14:02:26,616 INFO com.testtask.controller.DepartmentControllerTest [main] Starting DepartmentControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 5432 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:02:26,620 INFO com.testtask.controller.DepartmentControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:02:29,118 INFO com.testtask.controller.DepartmentControllerTest [main] Started DepartmentControllerTest in 3.138 seconds (JVM running for 4.95)
+2022-10-14 14:02:29,479 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.addDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 14:21:55,089 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 9584 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:21:55,094 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:21:57,689 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.269 seconds (JVM running for 5.105)
+2022-10-14 14:24:24,213 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 8828 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:24:24,219 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:24:26,678 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.111 seconds (JVM running for 4.944)
+2022-10-14 14:24:46,367 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 11576 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:24:46,373 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:24:48,876 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.104 seconds (JVM running for 4.876)
+2022-10-14 14:27:00,297 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 4648 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:27:00,304 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:27:02,840 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.258 seconds (JVM running for 5.252)
+2022-10-14 14:27:40,981 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 16296 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:27:40,985 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:27:43,841 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.523 seconds (JVM running for 5.455)
+2022-10-14 14:29:38,300 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 15924 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:29:38,306 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:29:40,885 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.213 seconds (JVM running for 5.245)
+2022-10-14 14:30:51,611 INFO com.testtask.TestTaskApplication [main] Starting TestTaskApplication using Java 17.0.2 on DESKTOP-3RBE9JS with PID 5852 (C:\Users\plwkc\IdeaProjects\test-task\target\classes started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:30:51,614 INFO com.testtask.TestTaskApplication [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:30:53,134 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-14 14:30:53,135 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-10-14 14:30:53,221 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-14 14:30:53,687 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 14:30:54,015 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 14:30:54,034 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 14:30:54,077 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 14:30:54,321 INFO com.testtask.TestTaskApplication [main] Started TestTaskApplication in 3.222 seconds (JVM running for 4.269)
+2022-10-14 14:31:43,873 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 14:31:43,911 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "0amount=2"]
+2022-10-14 14:33:10,975 INFO com.testtask.TestTaskApplication [main] Starting TestTaskApplication using Java 17.0.2 on DESKTOP-3RBE9JS with PID 7348 (C:\Users\plwkc\IdeaProjects\test-task\target\classes started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:33:10,977 INFO com.testtask.TestTaskApplication [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:33:12,423 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-14 14:33:12,424 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-10-14 14:33:12,508 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-14 14:33:12,957 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 14:33:13,268 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 14:33:13,283 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 14:33:13,321 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 14:33:13,554 INFO com.testtask.TestTaskApplication [main] Started TestTaskApplication in 3.083 seconds (JVM running for 3.918)
+2022-10-14 14:33:23,444 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 14:33:23,475 INFO com.testtask.service.impl.EmployeeServiceImpl [http-nio-8080-exec-1] Employee is going to be removed
+2022-10-14 14:34:01,974 INFO com.testtask.service.impl.EmployeeServiceImpl [http-nio-8080-exec-3] List of employees is going to be obtained
+2022-10-14 14:34:13,890 INFO com.testtask.service.impl.EmployeeServiceImpl [http-nio-8080-exec-4] List of employees is going to be obtained
+2022-10-14 14:35:26,834 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 11728 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:35:26,842 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:35:29,656 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.563 seconds (JVM running for 5.298)
+2022-10-14 14:35:30,042 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.updateEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 14:38:36,083 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 8544 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:38:36,091 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:38:38,766 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.384 seconds (JVM running for 5.328)
+2022-10-14 14:39:31,221 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 12420 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:39:31,225 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:39:33,754 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.226 seconds (JVM running for 5.139)
+2022-10-14 14:40:02,414 INFO com.testtask.TestTaskApplicationTests [main] Starting TestTaskApplicationTests using Java 17.0.2 on DESKTOP-3RBE9JS with PID 12180 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:40:02,419 INFO com.testtask.TestTaskApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:40:05,578 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 14:40:06,572 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 14:40:06,602 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 14:40:06,656 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 14:40:06,999 INFO com.testtask.TestTaskApplicationTests [main] Started TestTaskApplicationTests in 5.146 seconds (JVM running for 6.937)
+2022-10-14 14:40:18,843 INFO com.testtask.TestTaskApplicationTests [main] Starting TestTaskApplicationTests using Java 17.0.2 on DESKTOP-3RBE9JS with PID 6960 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:40:18,849 INFO com.testtask.TestTaskApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:40:22,325 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 14:40:23,434 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 14:40:23,465 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 14:40:23,521 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 14:40:23,979 INFO com.testtask.TestTaskApplicationTests [main] Started TestTaskApplicationTests in 5.627 seconds (JVM running for 7.303)
+2022-10-14 14:40:53,611 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 16124 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:40:53,616 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:40:55,919 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.059 seconds (JVM running for 5.974)
+2022-10-14 14:41:05,224 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 14400 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:41:05,227 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:41:07,524 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 2.954 seconds (JVM running for 6.173)
+2022-10-14 14:41:08,085 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.updateEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 14:41:08,211 INFO com.testtask.TestTaskApplicationTests [main] Starting TestTaskApplicationTests using Java 17.0.2 on DESKTOP-3RBE9JS with PID 14400 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:41:08,213 INFO com.testtask.TestTaskApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:41:09,940 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 14:41:10,559 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 14:41:10,592 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 14:41:10,636 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 14:41:10,902 INFO com.testtask.TestTaskApplicationTests [main] Started TestTaskApplicationTests in 2.741 seconds (JVM running for 9.551)
+2022-10-14 14:41:10,942 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 14:41:10,945 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:41:10,949 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 14:41:10,950 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:41:10,954 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 14:41:10,964 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 14:41:10,973 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 14:41:10,979 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 14:41:10,986 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 14:41:10,987 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:41:10,991 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 14:41:10,992 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own}
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:41:10,995 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 14:41:11,002 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 14:41:11,002 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:41:11,063 INFO com.testtask.controller.DepartmentControllerTest [main] Starting DepartmentControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 14400 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:41:11,064 INFO com.testtask.controller.DepartmentControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:41:11,627 INFO com.testtask.controller.DepartmentControllerTest [main] Started DepartmentControllerTest in 0.611 seconds (JVM running for 10.276)
+2022-10-14 14:41:11,652 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.updateDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 14:41:11,789 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.addDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 14:43:16,674 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 8456 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:43:16,678 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:43:18,671 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 2.627 seconds (JVM running for 5.543)
+2022-10-14 14:43:19,084 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.addEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 14:43:19,264 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.updateEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 14:43:19,407 INFO com.testtask.TestTaskApplicationTests [main] Starting TestTaskApplicationTests using Java 17.0.2 on DESKTOP-3RBE9JS with PID 8456 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:43:19,409 INFO com.testtask.TestTaskApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:43:21,199 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 14:43:21,840 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 14:43:21,875 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 14:43:21,920 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 14:43:22,190 INFO com.testtask.TestTaskApplicationTests [main] Started TestTaskApplicationTests in 2.841 seconds (JVM running for 9.062)
+2022-10-14 14:43:22,227 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 14:43:22,229 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:43:22,233 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 14:43:22,234 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:43:22,238 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 14:43:22,245 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 14:43:22,249 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 14:43:22,253 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 14:43:22,257 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 14:43:22,258 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:43:22,264 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 14:43:22,265 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own}
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:43:22,267 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 14:43:22,273 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 14:43:22,274 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:43:22,329 INFO com.testtask.controller.DepartmentControllerTest [main] Starting DepartmentControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 8456 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:43:22,330 INFO com.testtask.controller.DepartmentControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:43:22,893 INFO com.testtask.controller.DepartmentControllerTest [main] Started DepartmentControllerTest in 0.602 seconds (JVM running for 9.765)
+2022-10-14 14:43:22,914 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.updateDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 14:43:23,018 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.addDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 14:44:54,023 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 7772 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:44:54,028 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:44:56,560 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.139 seconds (JVM running for 5.032)
+2022-10-14 14:46:42,429 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 15824 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:46:42,434 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:46:44,960 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.232 seconds (JVM running for 5.143)
+2022-10-14 14:47:33,451 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 17048 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:47:33,458 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:47:36,008 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.294 seconds (JVM running for 5.212)
+2022-10-14 14:48:54,947 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 8824 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:48:54,951 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:48:57,537 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.252 seconds (JVM running for 5.106)
+2022-10-14 14:50:29,735 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 16116 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:50:29,741 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:50:32,297 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.327 seconds (JVM running for 5.181)
+2022-10-14 14:51:15,647 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 10248 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:51:15,655 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:51:18,123 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 3.113 seconds (JVM running for 4.903)
+2022-10-14 14:52:02,256 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 15792 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:52:02,260 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:52:04,277 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 2.641 seconds (JVM running for 5.83)
+2022-10-14 14:52:04,706 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.addEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 14:52:04,874 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.updateEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 14:52:04,987 INFO com.testtask.TestTaskApplicationTests [main] Starting TestTaskApplicationTests using Java 17.0.2 on DESKTOP-3RBE9JS with PID 15792 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:52:04,991 INFO com.testtask.TestTaskApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:52:06,809 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 14:52:07,451 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 14:52:07,486 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 14:52:07,545 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 14:52:07,820 INFO com.testtask.TestTaskApplicationTests [main] Started TestTaskApplicationTests in 2.881 seconds (JVM running for 9.374)
+2022-10-14 14:52:07,860 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 14:52:07,863 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:52:07,868 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 14:52:07,869 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:52:07,871 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 14:52:07,875 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 14:52:07,878 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 14:52:07,882 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 14:52:07,887 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 14:52:07,887 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:52:07,890 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 14:52:07,890 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own}
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:52:07,893 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 14:52:07,898 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 14:52:07,899 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 14:52:07,952 INFO com.testtask.controller.DepartmentControllerTest [main] Starting DepartmentControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 15792 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 14:52:07,953 INFO com.testtask.controller.DepartmentControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 14:52:08,533 INFO com.testtask.controller.DepartmentControllerTest [main] Started DepartmentControllerTest in 0.616 seconds (JVM running for 10.087)
+2022-10-14 14:52:08,555 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.updateDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 14:52:08,642 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.addDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 15:04:12,767 INFO com.testtask.controller.EmployeeControllerTest [main] Starting EmployeeControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 1340 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 15:04:12,772 INFO com.testtask.controller.EmployeeControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 15:04:14,855 INFO com.testtask.controller.EmployeeControllerTest [main] Started EmployeeControllerTest in 2.793 seconds (JVM running for 6.08)
+2022-10-14 15:04:15,300 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.addEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 15:04:15,539 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.EmployeeController.updateEmployee(com.testtask.entity.Employee): [Field error in object 'employee' on field 'employee_name': rejected value []; codes [NotBlank.employee.employee_name,NotBlank.employee_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employee.employee_name,employee_name]; arguments []; default message [employee_name]]; default message [must not be blank]] ]
+2022-10-14 15:04:15,695 INFO com.testtask.TestTaskApplicationTests [main] Starting TestTaskApplicationTests using Java 17.0.2 on DESKTOP-3RBE9JS with PID 1340 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 15:04:15,701 INFO com.testtask.TestTaskApplicationTests [main] No active profile set, falling back to default profiles: default
+2022-10-14 15:04:17,628 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-10-14 15:04:18,371 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2022-10-14 15:04:18,403 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2022-10-14 15:04:18,450 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2022-10-14 15:04:18,732 INFO com.testtask.TestTaskApplicationTests [main] Started TestTaskApplicationTests in 3.11 seconds (JVM running for 9.958)
+2022-10-14 15:04:18,774 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 15:04:18,777 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 15:04:18,783 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 15:04:18,784 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 15:04:18,787 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 15:04:18,790 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be found by id
+2022-10-14 15:04:18,794 INFO com.testtask.service.impl.DepartmentServiceImpl [main] List of departments is going to be obtained
+2022-10-14 15:04:18,797 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 15:04:18,803 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 15:04:18,804 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 15:04:18,807 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be removed
+2022-10-14 15:04:18,807 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own}
+com.testtask.eception.RepositoryException: null
+2022-10-14 15:04:18,810 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be added
+2022-10-14 15:04:18,819 INFO com.testtask.service.impl.DepartmentServiceImpl [main] Department is going to be updated
+2022-10-14 15:04:18,819 ERROR com.testtask.service.impl.DepartmentServiceImpl [main] Service has caught an exception and throws his own
+com.testtask.eception.RepositoryException: null
+2022-10-14 15:04:18,878 INFO com.testtask.controller.DepartmentControllerTest [main] Starting DepartmentControllerTest using Java 17.0.2 on DESKTOP-3RBE9JS with PID 1340 (started by plwkc in C:\Users\plwkc\IdeaProjects\test-task)
+2022-10-14 15:04:18,879 INFO com.testtask.controller.DepartmentControllerTest [main] No active profile set, falling back to default profiles: default
+2022-10-14 15:04:19,509 INFO com.testtask.controller.DepartmentControllerTest [main] Started DepartmentControllerTest in 0.673 seconds (JVM running for 10.734)
+2022-10-14 15:04:19,532 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.updateDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]
+2022-10-14 15:04:19,619 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [main] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.testtask.controller.DepartmentController.addDepartment(com.testtask.entity.Department): [Field error in object 'department' on field 'department_name': rejected value []; codes [NotBlank.department.department_name,NotBlank.department_name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [department.department_name,department_name]; arguments []; default message [department_name]]; default message [must not be blank]] ]

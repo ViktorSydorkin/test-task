@@ -23,7 +23,11 @@ public class EmployeeController {
   @ApiOperation(
       value = "Get employee by its id",
       notes = "Get employee by its id that was given as a path variable")
-  @ApiImplicitParam(name = "id", value = "Id of the employee", dataType = "Long", paramType = "path")
+  @ApiImplicitParam(
+      name = "id",
+      value = "Id of the employee",
+      dataType = "Long",
+      paramType = "path")
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/{id}")
   public Employee getEmployeeById(@PathVariable long id) {

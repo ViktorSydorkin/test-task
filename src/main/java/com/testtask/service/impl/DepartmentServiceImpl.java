@@ -23,7 +23,7 @@ public class DepartmentServiceImpl implements DepartmentService {
       log.info("Department is going to be found by id");
       return departmentRepo.getDepartmentById(id);
     } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own { }", e);
+      log.error("Service has caught an exception and throws his own", e);
       throw new ServiceException(e.getMessage());
     }
   }
@@ -34,7 +34,7 @@ public class DepartmentServiceImpl implements DepartmentService {
       log.info("List of departments is going to be obtained");
       return departmentRepo.getAllDepartments();
     } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own { }", e);
+      log.error("Service has caught an exception and throws his own", e);
       throw new ServiceException(e.getMessage());
     }
   }
@@ -45,7 +45,7 @@ public class DepartmentServiceImpl implements DepartmentService {
       log.info("Department is going to be added");
       departmentRepo.addDepartment(department);
     } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own { }", e);
+      log.error("Service has caught an exception and throws his own", e);
       throw new ServiceException(e.getMessage());
     }
   }
@@ -56,7 +56,7 @@ public class DepartmentServiceImpl implements DepartmentService {
       log.info("Department is going to be updated");
       departmentRepo.updateDepartment(department);
     } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own { }", e);
+      log.error("Service has caught an exception and throws his own", e);
       throw new ServiceException(e.getMessage());
     }
   }
@@ -67,7 +67,7 @@ public class DepartmentServiceImpl implements DepartmentService {
       log.info("Department is going to be removed");
       departmentRepo.deleteDepartment(id);
     } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own { }", e);
+      log.error("Service has caught an exception and throws his own}", e);
       throw new ServiceException(e.getMessage());
     }
   }
