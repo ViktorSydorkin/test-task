@@ -11,9 +11,9 @@ public interface EmployeeRepo {
 
     List<Employee> getAllEmployees(int limit, int offset);
 
-    void addEmployee(Employee employee);
+    Employee addEmployee(Employee employee);
 
-    void updateEmployee(Employee employee);
+    Employee updateEmployee(Employee employee);
 
     void deleteEmployee(long id);
 }

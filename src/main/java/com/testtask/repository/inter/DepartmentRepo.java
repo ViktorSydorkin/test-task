@@ -9,9 +9,9 @@ public interface DepartmentRepo {
 
     List<Department> getAllDepartments();
 
-    void updateDepartment(Department department);
+    Department updateDepartment(Department department);
 
-    void addDepartment(Department department);
+    Department addDepartment(Department department);
 
     void deleteDepartment(long id);
 }

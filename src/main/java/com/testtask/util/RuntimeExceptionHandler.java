@@ -1,8 +1,8 @@
 package com.testtask.util;
 
-import com.testtask.eception.ControllerException;
-import com.testtask.eception.RepositoryException;
-import com.testtask.eception.ServiceException;
+import com.testtask.exception.EntityAlreadyExistsException;
+import com.testtask.exception.NoSuchEntityException;
+import com.testtask.exception.RepositoryException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,24 +12,34 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Slf4j
 @RestControllerAdvice
 public class RuntimeExceptionHandler {
-    @ExceptionHandler
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public RuntimeException serviceExceptionHandler(RepositoryException repositoryException) {
-        log.error("Repository exception occurred {} {}", repositoryException, repositoryException.getMessage());
-        return new RuntimeException(repositoryException.getMessage());
-    }
+  @ExceptionHandler(NoSuchEntityException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public String noSuchEntityExceptionHandler(NoSuchEntityException noSuchEntityException) {
+    log.error(
+        "Exception was caught {} {}", noSuchEntityException, noSuchEntityException.getMessage());
+    return noSuchEntityException.getMessage();
+  }
 
-    @ExceptionHandler(ServiceException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public RuntimeException serviceExceptionHandler(ServiceException serviceException) {
-        log.error("Service exception occurred {} {}", serviceException, serviceException.getMessage());
-        return new RuntimeException(serviceException.getMessage());
-    }
+  @ExceptionHandler(EntityAlreadyExistsException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public String entityAlreadyExistsExceptionHandler(
+      EntityAlreadyExistsException entityAlreadyExistsException) {
+    log.error(
+        "Exception was caught {} {}",
+        entityAlreadyExistsException,
+        entityAlreadyExistsException.getMessage());
+    return entityAlreadyExistsException.getMessage();
+  }
 
-    @ExceptionHandler(ControllerException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public RuntimeException serviceExceptionHandler(ControllerException controllerException) {
-        log.error("Controller exception occurred {} {}", controllerException, controllerException.getMessage());
-        return new RuntimeException(controllerException.getMessage());
-    }
+  @ExceptionHandler(RepositoryException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public String repositoryException(RepositoryException repositoryException) {
+    log.error(
+        "Exception was caught {} {} {} {}",
+        repositoryException,
+        repositoryException.getMessage(),
+        repositoryException.getCause(),
+        repositoryException.getCause().getMessage());
+    return repositoryException.getMessage() +". " + repositoryException.getCause().getMessage() ;
+  }
 }

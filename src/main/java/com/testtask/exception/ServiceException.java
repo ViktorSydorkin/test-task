@@ -1,4 +1,4 @@
-package com.testtask.eception;
+package com.testtask.exception;
 
 import lombok.NoArgsConstructor;
 

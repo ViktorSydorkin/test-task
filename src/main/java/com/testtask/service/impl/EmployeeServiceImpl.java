@@ -1,8 +1,8 @@
 package com.testtask.service.impl;
 
-import com.testtask.eception.RepositoryException;
-import com.testtask.eception.ServiceException;
-import com.testtask.entity.Employee;
+import com.testtask.entity.dto.EmployeeDTO;
+import com.testtask.entity.dto.EmployeeDTOWithId;
+import com.testtask.entity.mappers.EmployeeMapper;
 import com.testtask.repository.inter.EmployeeRepo;
 import com.testtask.service.inter.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -18,68 +19,44 @@ public class EmployeeServiceImpl implements EmployeeService {
   private final EmployeeRepo employeeRepo;
 
   @Override
-  public Employee getEmployeeById(long id) {
-    try {
-      log.info("Employee is going to be found by id");
-      return employeeRepo.getEmployeeById(id);
-    } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own", e);
-      throw new ServiceException(e.getMessage());
-    }
+  public EmployeeDTOWithId getEmployeeById(long id) {
+    log.info("Employee is going to be found by id");
+    return EmployeeMapper.INSTANCE.toDtoWithId(employeeRepo.getEmployeeById(id));
   }
 
   @Override
-  public List<Employee> getEmployeesByName(String name) {
-    try {
-      log.info("List of employees with the specific name is going to be obtained");
-      return employeeRepo.getEmployeesByName(name);
-    } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own", e);
-      throw new ServiceException(e.getMessage());
-    }
+  public List<EmployeeDTOWithId> getEmployeesByName(String name) {
+    log.info("List of employees with the specific name is going to be obtained");
+    return employeeRepo.getEmployeesByName(name).stream()
+        .map(EmployeeMapper.INSTANCE::toDtoWithId)
+        .collect(Collectors.toList());
   }
 
   @Override
-  public List<Employee> getAllEmployees(int page, int amount) {
-    try {
-      log.info("List of employees is going to be obtained");
-      return employeeRepo.getAllEmployees(amount, page * amount);
-    } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own", e);
-      throw new ServiceException(e.getMessage());
-    }
+  public List<EmployeeDTOWithId> getAllEmployees(int page, int amount) {
+    log.info("List of employees is going to be obtained");
+    return employeeRepo.getAllEmployees(amount, page * amount).stream()
+        .map(EmployeeMapper.INSTANCE::toDtoWithId)
+        .collect(Collectors.toList());
   }
 
   @Override
-  public void addEmployee(Employee employee) {
-    try {
-      log.info("Employee is going to be added");
-      employeeRepo.addEmployee(employee);
-    } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own", e);
-      throw new ServiceException(e.getMessage());
-    }
+  public EmployeeDTOWithId addEmployee(EmployeeDTO employeeDTO) {
+    log.info("Employee is going to be added");
+    return EmployeeMapper.INSTANCE.toDtoWithId(
+        employeeRepo.addEmployee(EmployeeMapper.INSTANCE.fromDto(employeeDTO)));
   }
 
   @Override
-  public void updateEmployee(Employee employee) {
-    try {
-      log.info("Employee is going to be updated");
-      employeeRepo.updateEmployee(employee);
-    } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own", e);
-      throw new ServiceException(e.getMessage());
-    }
+  public EmployeeDTOWithId updateEmployee(EmployeeDTOWithId employeeDTOWithId) {
+    log.info("Employee is going to be updated");
+    return EmployeeMapper.INSTANCE.toDtoWithId(
+        employeeRepo.updateEmployee(EmployeeMapper.INSTANCE.fromDtoWithId(employeeDTOWithId)));
   }
 
   @Override
   public void deleteEmployee(long id) {
-    try {
-      log.info("Employee is going to be removed");
-      employeeRepo.deleteEmployee(id);
-    } catch (RepositoryException e) {
-      log.error("Service has caught an exception and throws his own", e);
-      throw new ServiceException(e.getMessage());
-    }
+    log.info("Employee is going to be removed");
+    employeeRepo.deleteEmployee(id);
   }
 }

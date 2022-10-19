@@ -12,13 +12,13 @@ public class EmployeeRowMapper implements RowMapper<Employee> {
   public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
 
     return Employee.builder()
-        .employee_id(rs.getLong("employee_id"))
-        .employee_name(rs.getString("name"))
+        .employeeId(rs.getLong("employee_id"))
+        .employeeName(rs.getString("name"))
         .active(rs.getBoolean("active"))
         .department(
             Department.builder()
-                .department_id(rs.getLong("department_id"))
-                .department_name(rs.getString("department_name"))
+                .departmentId(rs.getLong("department_id"))
+                .departmentName(rs.getString("department_name"))
                 .build())
         .build();
   }

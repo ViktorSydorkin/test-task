@@ -7,14 +7,16 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Employee {
-  private long employee_id;
-  @NotBlank private String employee_name;
+  @Positive
+  private long employeeId;
+  @NotBlank private String employeeName;
   @NotNull private boolean active;
   @NotNull private Department department;
 }

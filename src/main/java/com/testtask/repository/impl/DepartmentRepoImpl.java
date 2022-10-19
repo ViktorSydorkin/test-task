@@ -1,18 +1,24 @@
 package com.testtask.repository.impl;
 
-import com.testtask.eception.RepositoryException;
 import com.testtask.entity.Department;
+import com.testtask.exception.EntityAlreadyExistsException;
+import com.testtask.exception.NoSuchEntityException;
+import com.testtask.exception.RepositoryException;
 import com.testtask.repository.inter.DepartmentRepo;
 import com.testtask.repository.util.SQL;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Objects;
 
 @Slf4j
 @Repository
@@ -22,14 +28,12 @@ public class DepartmentRepoImpl implements DepartmentRepo {
 
   @Override
   public Department getDepartmentById(long id) {
+    SqlParameterSource params = new MapSqlParameterSource().addValue("id", id);
     try {
-      Map<String, Object> params = new HashMap<>();
-      params.put("id", id);
       return jdbcTemplate.queryForObject(
           SQL.GET_DEPARTMENT_BY_ID, params, new BeanPropertyRowMapper<>(Department.class));
-    } catch (Exception e) {
-      log.error("Repository has thrown an exception");
-      throw new RepositoryException(e.getMessage());
+    } catch (DataAccessException dataAccessException) {
+      throw new RepositoryException("SQL query went wrong", dataAccessException);
     }
   }
 
@@ -38,51 +42,39 @@ public class DepartmentRepoImpl implements DepartmentRepo {
     try {
       return jdbcTemplate.query(
           SQL.GET_ALL_DEPARTMENTS, new BeanPropertyRowMapper<>(Department.class));
-    } catch (Exception e) {
-      log.error("Repository has thrown an exception");
-      throw new RepositoryException(e.getMessage());
+    } catch (DataAccessException dataAccessException) {
+      throw new RepositoryException("SQL query went wrong", dataAccessException);
     }
   }
 
   @Override
-  public void updateDepartment(Department department) {
-    try {
-      Map<String, Object> params = new HashMap<>();
-      params.put("id", department.getDepartment_id());
-      params.put("name", department.getDepartment_name());
-      if (jdbcTemplate.update(SQL.UPDATE_DEPARTMENT, params) == 0)
-        throw new RepositoryException(
-            "The department with id " + department.getDepartment_id() + " doesn't exists");
-    } catch (Exception e) {
-      log.error("Repository has thrown an exception");
-      throw new RepositoryException(e.getMessage());
-    }
+  public Department updateDepartment(Department department) {
+    SqlParameterSource params =
+        new MapSqlParameterSource()
+            .addValue("id", department.getDepartmentId())
+            .addValue("name", department.getDepartmentName());
+    if (jdbcTemplate.update(SQL.UPDATE_DEPARTMENT, params) == 0)
+      throw new NoSuchEntityException(
+          "The department with id " + department.getDepartmentId() + " doesn't exists");
+    return department;
   }
 
   @Override
-  public void addDepartment(Department department) {
-    try {
-      Map<String, Object> params = new HashMap<>();
-      params.put("name", department.getDepartment_name());
-      if (jdbcTemplate.update(SQL.ADD_DEPARTMENT, params) == 0)
-        throw new RepositoryException(
-            "The department with id " + department.getDepartment_id() + " already exists");
-    } catch (Exception e) {
-      log.error("Repository has thrown an exception");
-      throw new RepositoryException(e.getMessage());
-    }
+  public Department addDepartment(Department department) {
+    KeyHolder keyHolder = new GeneratedKeyHolder();
+    SqlParameterSource params =
+        new MapSqlParameterSource().addValue("name", department.getDepartmentName());
+    if (jdbcTemplate.update(SQL.ADD_DEPARTMENT, params, keyHolder, new String[] {"Id"}) == 0)
+      throw new EntityAlreadyExistsException(
+          "The department with id " + department.getDepartmentId() + " already exists");
+    department.setDepartmentId(Objects.requireNonNull(keyHolder.getKey()).longValue());
+    return department;
   }
 
   @Override
   public void deleteDepartment(long id) {
-    try {
-      Map<String, Object> params = new HashMap<>();
-      params.put("id", id);
-      if (jdbcTemplate.update(SQL.DELETE_DEPARTMENT, params) == 0)
-        throw new RepositoryException("The department with id " + id + " doesn't exists");
-    } catch (Exception e) {
-      log.error("Repository has thrown an exception");
-      throw new RepositoryException(e.getMessage());
-    }
+    SqlParameterSource params = new MapSqlParameterSource().addValue("id", id);
+    if (jdbcTemplate.update(SQL.DELETE_DEPARTMENT, params) == 0)
+      throw new NoSuchEntityException("The department with id " + id + " doesn't exists");
   }
 }
