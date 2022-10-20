@@ -21,14 +21,14 @@ public class EmployeeServiceImpl implements EmployeeService {
   @Override
   public EmployeeDto findById(long id) {
     log.info("Employee is going to be found by id");
-    return EmployeeMapper.INSTANCE.toDtoWithId(employeeRepo.getEmployeeById(id));
+    return EmployeeMapper.INSTANCE.toDto(employeeRepo.getEmployeeById(id));
   }
 
   @Override
   public List<EmployeeDto> findByName(String name) {
     log.info("List of employees with the specific name is going to be obtained");
     return employeeRepo.getEmployeesByName(name).stream()
-        .map(EmployeeMapper.INSTANCE::toDtoWithId)
+        .map(EmployeeMapper.INSTANCE::toDto)
         .collect(Collectors.toList());
   }
 
@@ -36,22 +36,22 @@ public class EmployeeServiceImpl implements EmployeeService {
   public List<EmployeeDto> findAll(int page, int amount) {
     log.info("List of employees is going to be obtained");
     return employeeRepo.getAllEmployees(amount, page * amount).stream()
-        .map(EmployeeMapper.INSTANCE::toDtoWithId)
+        .map(EmployeeMapper.INSTANCE::toDto)
         .collect(Collectors.toList());
   }
 
   @Override
   public EmployeeDto create(EmployeePostDto employeePostDto) {
     log.info("Employee is going to be added");
-    return EmployeeMapper.INSTANCE.toDtoWithId(
-        employeeRepo.addEmployee(EmployeeMapper.INSTANCE.fromDto(employeePostDto)));
+    return EmployeeMapper.INSTANCE.toDto(
+        employeeRepo.addEmployee(EmployeeMapper.INSTANCE.fromPostDto(employeePostDto)));
   }
 
   @Override
   public EmployeeDto update(EmployeeDto employeeDto) {
     log.info("Employee is going to be updated");
-    return EmployeeMapper.INSTANCE.toDtoWithId(
-        employeeRepo.updateEmployee(EmployeeMapper.INSTANCE.fromDtoWithId(employeeDto)));
+    return EmployeeMapper.INSTANCE.toDto(
+        employeeRepo.updateEmployee(EmployeeMapper.INSTANCE.fromDto(employeeDto)));
   }
 
   @Override

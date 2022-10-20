@@ -37,7 +37,7 @@ class EmployeeServiceImplTest {
     when(employeeRepo.getEmployeeById(MOCKED_ID1)).thenReturn(employee);
 
     assertEquals(
-        EmployeeMapper.INSTANCE.toDtoWithId(employee), employeeService.findById(MOCKED_ID1));
+        EmployeeMapper.INSTANCE.toDto(employee), employeeService.findById(MOCKED_ID1));
   }
 
   @Test
@@ -46,7 +46,7 @@ class EmployeeServiceImplTest {
     when(employeeRepo.getEmployeesByName(MOCKED_NAME)).thenReturn(List.of(employee));
 
     assertEquals(
-        Stream.of(employee).map(EmployeeMapper.INSTANCE::toDtoWithId).collect(Collectors.toList()),
+        Stream.of(employee).map(EmployeeMapper.INSTANCE::toDto).collect(Collectors.toList()),
         employeeService.findByName(MOCKED_NAME));
   }
 
@@ -60,8 +60,8 @@ class EmployeeServiceImplTest {
     assertThat(
         employeeService.findAll(0, 2),
         containsInAnyOrder(
-            EmployeeMapper.INSTANCE.toDtoWithId(employee),
-            EmployeeMapper.INSTANCE.toDtoWithId(employee2)));
+            EmployeeMapper.INSTANCE.toDto(employee),
+            EmployeeMapper.INSTANCE.toDto(employee2)));
   }
 
   @Test
@@ -69,7 +69,7 @@ class EmployeeServiceImplTest {
     Employee employee = Employee.builder().department(Department.builder().departmentId(MOCKED_ID1).build()).build();
     when(employeeRepo.addEmployee(employee)).thenReturn(employee);
 
-    employeeService.create(EmployeeMapper.INSTANCE.toDto(employee));
+    employeeService.create(EmployeeMapper.INSTANCE.toPostDto(employee));
     verify(employeeRepo, times(1)).addEmployee(employee);
   }
 
@@ -78,7 +78,7 @@ class EmployeeServiceImplTest {
     Employee employee = Employee.builder().department(Department.builder().departmentId(MOCKED_ID1).build()).employeeId(MOCKED_ID1).build();
     when(employeeRepo.updateEmployee(employee)).thenReturn(employee);
 
-    employeeService.update(EmployeeMapper.INSTANCE.toDtoWithId(employee));
+    employeeService.update(EmployeeMapper.INSTANCE.toDto(employee));
     verify(employeeRepo, times(1)).updateEmployee(employee);
   }
 

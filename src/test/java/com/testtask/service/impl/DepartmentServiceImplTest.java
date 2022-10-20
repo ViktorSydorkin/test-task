@@ -33,7 +33,7 @@ class DepartmentServiceImplTest {
     when(departmentRepo.getDepartmentById(MOCKED_ID1)).thenReturn(department);
 
     assertEquals(
-        DepartmentMapper.INSTANCE.toDtoWithId(department),
+        DepartmentMapper.INSTANCE.toDto(department),
         departmentService.findById(MOCKED_ID1));
   }
 
@@ -47,8 +47,8 @@ class DepartmentServiceImplTest {
     assertThat(
         departmentService.findAll(),
         containsInAnyOrder(
-            DepartmentMapper.INSTANCE.toDtoWithId(department),
-            DepartmentMapper.INSTANCE.toDtoWithId(department2)));
+            DepartmentMapper.INSTANCE.toDto(department),
+            DepartmentMapper.INSTANCE.toDto(department2)));
   }
 
   @Test
@@ -56,7 +56,7 @@ class DepartmentServiceImplTest {
     Department department = Department.builder().departmentName(MOCKED_NAME).build();
     when(departmentRepo.addDepartment(department)).thenReturn(department);
 
-    departmentService.create(DepartmentMapper.INSTANCE.toDto(department));
+    departmentService.create(DepartmentMapper.INSTANCE.toPostDto(department));
     verify(departmentRepo, times(1)).addDepartment(department);
   }
 
@@ -65,7 +65,7 @@ class DepartmentServiceImplTest {
     Department department = Department.builder().departmentId(MOCKED_ID1).build();
     when(departmentRepo.updateDepartment(department)).thenReturn(department);
 
-    departmentService.update(DepartmentMapper.INSTANCE.toDtoWithId(department));
+    departmentService.update(DepartmentMapper.INSTANCE.toDto(department));
     verify(departmentRepo, times(1)).updateDepartment(department);
   }
 

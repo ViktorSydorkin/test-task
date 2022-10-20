@@ -25,4 +25,4 @@ What was done:
 4. Exception handling for a controllers.
 5. Swagger was added to the project and configured.
 6. A Sl4j logger was added and configured a base logback realization.
-7. Test was written and the coverage is 83%
+7. Tests were written

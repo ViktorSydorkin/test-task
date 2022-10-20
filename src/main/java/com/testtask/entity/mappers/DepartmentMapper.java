@@ -9,8 +9,8 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface DepartmentMapper {
     DepartmentMapper INSTANCE = Mappers.getMapper(DepartmentMapper.class);
-    DepartmentPostDto toDto(Department department);
-    Department fromDto(DepartmentPostDto departmentPostDto);
-    DepartmentDto toDtoWithId(Department department);
-    Department fromDtoWithId(DepartmentDto departmentDTO);
+    DepartmentPostDto toPostDto(Department department);
+    Department fromPostDto(DepartmentPostDto departmentPostDto);
+    DepartmentDto toDto(Department department);
+    Department fromDto(DepartmentDto departmentDTO);
 }

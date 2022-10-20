@@ -13,8 +13,6 @@ import javax.validation.constraints.Positive;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Department {
-    @Positive
     private long departmentId;
-    @NotBlank
     private String departmentName;
 }

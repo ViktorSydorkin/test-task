@@ -11,7 +11,7 @@ import org.mapstruct.factory.Mappers;
 public interface EmployeeMapper {
   EmployeeMapper INSTANCE = Mappers.getMapper(EmployeeMapper.class);
 
-  default EmployeePostDto toDto(Employee employee) {
+  default EmployeePostDto toPostDto(Employee employee) {
     return EmployeePostDto.builder()
         .employeeName(employee.getEmployeeName())
         .active(employee.isActive())
@@ -19,7 +19,7 @@ public interface EmployeeMapper {
         .build();
   }
 
-  default Employee fromDto(EmployeePostDto employeePostDto) {
+  default Employee fromPostDto(EmployeePostDto employeePostDto) {
     return Employee.builder()
         .employeeName(employeePostDto.getEmployeeName())
         .active(employeePostDto.isActive())
@@ -27,7 +27,7 @@ public interface EmployeeMapper {
         .build();
   }
 
-  default Employee fromDtoWithId(EmployeeDto employeeDto) {
+  default Employee fromDto(EmployeeDto employeeDto) {
     return Employee.builder()
         .employeeId(employeeDto.getEmployeeId())
         .employeeName(employeeDto.getEmployeeName())
@@ -36,7 +36,7 @@ public interface EmployeeMapper {
         .build();
   }
 
-  default EmployeeDto toDtoWithId(Employee employee) {
+  default EmployeeDto toDto(Employee employee) {
     return EmployeeDto.builder()
         .employeeId(employee.getEmployeeId())
         .employeeName(employee.getEmployeeName())
