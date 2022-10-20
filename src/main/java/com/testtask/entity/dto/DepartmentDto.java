@@ -13,13 +13,11 @@ import javax.validation.constraints.Positive;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeDTOWithId {
+public class DepartmentDto {
     @NotNull
     @Positive
-    public long employeeId;
+    public long departmentId;
     @NotBlank
-    public String employeeName;
-    @NotNull
-    public boolean active;
-    @NotNull public long department;
+    public String departmentName;
+
 }

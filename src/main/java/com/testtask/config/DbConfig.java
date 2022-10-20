@@ -1,4 +1,4 @@
-package com.testtask.repository.util;
+package com.testtask.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-public class Config {
+public class DbConfig {
   @Value("${db.connector}")
   private String connector;
 

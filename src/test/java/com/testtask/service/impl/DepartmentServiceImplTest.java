@@ -1,10 +1,7 @@
 package com.testtask.service.impl;
 
 import com.testtask.entity.Department;
-import com.testtask.entity.dto.DepartmentDTO;
 import com.testtask.entity.mappers.DepartmentMapper;
-import com.testtask.exception.RepositoryException;
-import com.testtask.exception.ServiceException;
 import com.testtask.repository.inter.DepartmentRepo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +14,6 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -38,7 +34,7 @@ class DepartmentServiceImplTest {
 
     assertEquals(
         DepartmentMapper.INSTANCE.toDtoWithId(department),
-        departmentService.getDepartmentById(MOCKED_ID1));
+        departmentService.findById(MOCKED_ID1));
   }
 
   @Test
@@ -49,30 +45,33 @@ class DepartmentServiceImplTest {
 
     when(departmentRepo.getAllDepartments()).thenReturn(departmentList);
     assertThat(
-        departmentService.getAllDepartments(),
+        departmentService.findAll(),
         containsInAnyOrder(
             DepartmentMapper.INSTANCE.toDtoWithId(department),
             DepartmentMapper.INSTANCE.toDtoWithId(department2)));
   }
+
   @Test
   void addDepartment() {
-    DepartmentDTO department = DepartmentDTO.builder().departmentName(MOCKED_NAME).build();
+    Department department = Department.builder().departmentName(MOCKED_NAME).build();
+    when(departmentRepo.addDepartment(department)).thenReturn(department);
 
-    departmentService.addDepartment(department);
-    verify(departmentRepo, times(1)).addDepartment(  DepartmentMapper.INSTANCE.fromDto(department));
+    departmentService.create(DepartmentMapper.INSTANCE.toDto(department));
+    verify(departmentRepo, times(1)).addDepartment(department);
   }
 
   @Test
   void updateDepartment() {
     Department department = Department.builder().departmentId(MOCKED_ID1).build();
+    when(departmentRepo.updateDepartment(department)).thenReturn(department);
 
-    departmentService.updateDepartment( DepartmentMapper.INSTANCE.toDtoWithId(department));
+    departmentService.update(DepartmentMapper.INSTANCE.toDtoWithId(department));
     verify(departmentRepo, times(1)).updateDepartment(department);
   }
 
   @Test
   void deleteDepartment() {
-    departmentService.deleteDepartment(MOCKED_ID1);
+    departmentService.deleteById(MOCKED_ID1);
     verify(departmentRepo, times(1)).deleteDepartment(MOCKED_ID1);
   }
 }

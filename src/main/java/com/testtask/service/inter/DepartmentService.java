@@ -1,15 +1,14 @@
 package com.testtask.service.inter;
 
-import com.testtask.entity.Department;
-import com.testtask.entity.dto.DepartmentDTO;
-import com.testtask.entity.dto.DepartmentDTOWithId;
+import com.testtask.entity.dto.DepartmentDto;
+import com.testtask.entity.dto.DepartmentPostDto;
 
 import java.util.List;
 
 public interface DepartmentService {
-    DepartmentDTOWithId getDepartmentById(long id);
-    List<DepartmentDTOWithId> getAllDepartments();
-    DepartmentDTOWithId addDepartment(DepartmentDTO departmentDTO);
-    DepartmentDTOWithId updateDepartment(DepartmentDTOWithId departmentDTOWithId);
-    void deleteDepartment(long id);
+    DepartmentDto findById(long id);
+    List<DepartmentDto> findAll();
+    DepartmentDto create(DepartmentPostDto departmentPostDto);
+    DepartmentDto update(DepartmentDto departmentDto);
+    void deleteById(long id);
 }

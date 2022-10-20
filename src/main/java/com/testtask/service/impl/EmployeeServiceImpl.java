@@ -1,7 +1,7 @@
 package com.testtask.service.impl;
 
-import com.testtask.entity.dto.EmployeeDTO;
-import com.testtask.entity.dto.EmployeeDTOWithId;
+import com.testtask.entity.dto.EmployeePostDto;
+import com.testtask.entity.dto.EmployeeDto;
 import com.testtask.entity.mappers.EmployeeMapper;
 import com.testtask.repository.inter.EmployeeRepo;
 import com.testtask.service.inter.EmployeeService;
@@ -19,13 +19,13 @@ public class EmployeeServiceImpl implements EmployeeService {
   private final EmployeeRepo employeeRepo;
 
   @Override
-  public EmployeeDTOWithId getEmployeeById(long id) {
+  public EmployeeDto findById(long id) {
     log.info("Employee is going to be found by id");
     return EmployeeMapper.INSTANCE.toDtoWithId(employeeRepo.getEmployeeById(id));
   }
 
   @Override
-  public List<EmployeeDTOWithId> getEmployeesByName(String name) {
+  public List<EmployeeDto> findByName(String name) {
     log.info("List of employees with the specific name is going to be obtained");
     return employeeRepo.getEmployeesByName(name).stream()
         .map(EmployeeMapper.INSTANCE::toDtoWithId)
@@ -33,7 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
   }
 
   @Override
-  public List<EmployeeDTOWithId> getAllEmployees(int page, int amount) {
+  public List<EmployeeDto> findAll(int page, int amount) {
     log.info("List of employees is going to be obtained");
     return employeeRepo.getAllEmployees(amount, page * amount).stream()
         .map(EmployeeMapper.INSTANCE::toDtoWithId)
@@ -41,21 +41,21 @@ public class EmployeeServiceImpl implements EmployeeService {
   }
 
   @Override
-  public EmployeeDTOWithId addEmployee(EmployeeDTO employeeDTO) {
+  public EmployeeDto create(EmployeePostDto employeePostDto) {
     log.info("Employee is going to be added");
     return EmployeeMapper.INSTANCE.toDtoWithId(
-        employeeRepo.addEmployee(EmployeeMapper.INSTANCE.fromDto(employeeDTO)));
+        employeeRepo.addEmployee(EmployeeMapper.INSTANCE.fromDto(employeePostDto)));
   }
 
   @Override
-  public EmployeeDTOWithId updateEmployee(EmployeeDTOWithId employeeDTOWithId) {
+  public EmployeeDto update(EmployeeDto employeeDto) {
     log.info("Employee is going to be updated");
     return EmployeeMapper.INSTANCE.toDtoWithId(
-        employeeRepo.updateEmployee(EmployeeMapper.INSTANCE.fromDtoWithId(employeeDTOWithId)));
+        employeeRepo.updateEmployee(EmployeeMapper.INSTANCE.fromDtoWithId(employeeDto)));
   }
 
   @Override
-  public void deleteEmployee(long id) {
+  public void deleteById(long id) {
     log.info("Employee is going to be removed");
     employeeRepo.deleteEmployee(id);
   }

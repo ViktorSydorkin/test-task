@@ -1,17 +1,16 @@
 package com.testtask.service.inter;
 
-import com.testtask.entity.Employee;
-import com.testtask.entity.dto.EmployeeDTO;
-import com.testtask.entity.dto.EmployeeDTOWithId;
+import com.testtask.entity.dto.EmployeePostDto;
+import com.testtask.entity.dto.EmployeeDto;
 
 import java.util.List;
 
 
 public interface EmployeeService {
-    EmployeeDTOWithId getEmployeeById(long id);
-    List<EmployeeDTOWithId> getEmployeesByName(String name);
-    List<EmployeeDTOWithId> getAllEmployees(int page, int amount);
-    EmployeeDTOWithId addEmployee(EmployeeDTO employeeDTO);
-    EmployeeDTOWithId updateEmployee(EmployeeDTOWithId employeeDTOWithId);
-    void deleteEmployee(long id);
+    EmployeeDto findById(long id);
+    List<EmployeeDto> findByName(String name);
+    List<EmployeeDto> findAll(int page, int amount);
+    EmployeeDto create(EmployeePostDto employeePostDto);
+    EmployeeDto update(EmployeeDto employeeDto);
+    void deleteById(long id);
 }

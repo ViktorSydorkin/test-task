@@ -1,9 +1,7 @@
 package com.testtask.controller;
 
-import com.testtask.entity.dto.DepartmentDTO;
-import com.testtask.entity.dto.DepartmentDTOWithId;
-import com.testtask.exception.ControllerException;
-import com.testtask.exception.ServiceException;
+import com.testtask.entity.dto.DepartmentPostDto;
+import com.testtask.entity.dto.DepartmentDto;
 import com.testtask.service.inter.DepartmentService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -13,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.util.List;
 
@@ -35,8 +32,8 @@ public class DepartmentController {
       paramType = "path")
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/{id}")
-  public DepartmentDTOWithId getDepartment(@PathVariable @Positive long id) {
-    return departmentService.getDepartmentById(id);
+  public DepartmentDto findById(@PathVariable @Positive long id) {
+    return departmentService.findById(id);
   }
 
   @ApiOperation(
@@ -45,9 +42,9 @@ public class DepartmentController {
       httpMethod = "GET",
       produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseStatus(HttpStatus.OK)
-  @GetMapping()
-  public List<DepartmentDTOWithId> getAllDepartments() {
-      return departmentService.getAllDepartments();
+  @GetMapping
+  public List<DepartmentDto> findAll() {
+      return departmentService.findAll();
   }
 
   @ApiOperation(
@@ -56,10 +53,10 @@ public class DepartmentController {
       httpMethod = "PUT",
       produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseStatus(HttpStatus.OK)
-  @PutMapping()
-  public DepartmentDTOWithId updateDepartment(
-      @RequestBody @Valid DepartmentDTOWithId departmentDTOWithId) {
-      return departmentService.updateDepartment(departmentDTOWithId);
+  @PutMapping
+  public DepartmentDto update(
+      @RequestBody @Valid DepartmentDto departmentDto) {
+      return departmentService.update(departmentDto);
   }
 
   @ApiOperation(
@@ -69,8 +66,8 @@ public class DepartmentController {
       produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseStatus(HttpStatus.CREATED)
   @PostMapping
-  public DepartmentDTOWithId addDepartment(@RequestBody @Valid DepartmentDTO departmentDTO) {
-      return departmentService.addDepartment(departmentDTO);
+  public DepartmentDto create(@RequestBody @Valid DepartmentPostDto departmentPostDto) {
+      return departmentService.create(departmentPostDto);
   }
 
   @ApiOperation(
@@ -83,7 +80,7 @@ public class DepartmentController {
       dataType = "Long",
       paramType = "path")
   @DeleteMapping("/{id}")
-  public void deleteDepartment(@PathVariable @Positive long id) {
-      departmentService.deleteDepartment(id);
+  public void deleteById(@PathVariable @Positive long id) {
+      departmentService.deleteById(id);
   }
 }

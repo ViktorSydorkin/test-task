@@ -11,6 +11,6 @@ import javax.validation.constraints.NotBlank;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DepartmentDTO {
+public class DepartmentPostDto {
   @NotBlank public String departmentName;
 }

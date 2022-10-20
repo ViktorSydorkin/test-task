@@ -20,16 +20,16 @@ USE `test-task`;
 --
 -- Table structure for table `departments`
 --
-DROP TABLE IF EXISTS `employees`;
-DROP TABLE IF EXISTS `departments`;
 
+DROP TABLE IF EXISTS `departments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `departments` (
   `department_id` bigint NOT NULL AUTO_INCREMENT,
   `department_name` varchar(45) NOT NULL,
-  PRIMARY KEY (`department_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+  PRIMARY KEY (`department_id`),
+  UNIQUE KEY `department_name_UNIQUE` (`department_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `departments` (
 
 LOCK TABLES `departments` WRITE;
 /*!40000 ALTER TABLE `departments` DISABLE KEYS */;
-INSERT INTO `departments` VALUES (1,'HR'),(2,'Tech'),(3,'Finance'),(4,'name');
+INSERT INTO `departments` VALUES (3,'Finance'),(1,'HR'),(2,'Tech');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -46,6 +46,7 @@ UNLOCK TABLES;
 -- Table structure for table `employees`
 --
 
+DROP TABLE IF EXISTS `employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employees` (
@@ -56,7 +57,7 @@ CREATE TABLE `employees` (
   PRIMARY KEY (`employee_id`),
   KEY `fk_department_id_idx` (`department`),
   CONSTRAINT `fk_department_id` FOREIGN KEY (`department`) REFERENCES `departments` (`department_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +66,7 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (1,'Lisa',1,1),(2,'Erik',1,2),(3,'Don',1,3),(4,'Peter',0,2);
+INSERT INTO `employees` VALUES (2,'Erik',1,2),(3,'Don',1,3),(4,'Peter',0,2),(8,'Test-ch',0,2);
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -78,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-13 16:57:26
+-- Dump completed on 2022-10-19 22:58:15

@@ -2,10 +2,7 @@ package com.testtask.service.impl;
 
 import com.testtask.entity.Department;
 import com.testtask.entity.Employee;
-import com.testtask.entity.dto.EmployeeDTO;
 import com.testtask.entity.mappers.EmployeeMapper;
-import com.testtask.exception.RepositoryException;
-import com.testtask.exception.ServiceException;
 import com.testtask.repository.inter.EmployeeRepo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,7 +37,7 @@ class EmployeeServiceImplTest {
     when(employeeRepo.getEmployeeById(MOCKED_ID1)).thenReturn(employee);
 
     assertEquals(
-        EmployeeMapper.INSTANCE.toDtoWithId(employee), employeeService.getEmployeeById(MOCKED_ID1));
+        EmployeeMapper.INSTANCE.toDtoWithId(employee), employeeService.findById(MOCKED_ID1));
   }
 
   @Test
@@ -50,7 +47,7 @@ class EmployeeServiceImplTest {
 
     assertEquals(
         Stream.of(employee).map(EmployeeMapper.INSTANCE::toDtoWithId).collect(Collectors.toList()),
-        employeeService.getEmployeesByName(MOCKED_NAME));
+        employeeService.findByName(MOCKED_NAME));
   }
 
   @Test
@@ -61,7 +58,7 @@ class EmployeeServiceImplTest {
     when(employeeRepo.getAllEmployees(2, 0)).thenReturn(employees);
 
     assertThat(
-        employeeService.getAllEmployees(0, 2),
+        employeeService.findAll(0, 2),
         containsInAnyOrder(
             EmployeeMapper.INSTANCE.toDtoWithId(employee),
             EmployeeMapper.INSTANCE.toDtoWithId(employee2)));
@@ -69,23 +66,25 @@ class EmployeeServiceImplTest {
 
   @Test
   void addEmployee() {
-    EmployeeDTO employee = EmployeeDTO.builder().department(MOCKED_ID1).build();
+    Employee employee = Employee.builder().department(Department.builder().departmentId(MOCKED_ID1).build()).build();
+    when(employeeRepo.addEmployee(employee)).thenReturn(employee);
 
-    employeeService.addEmployee(employee);
-    verify(employeeRepo, times(1)).addEmployee( EmployeeMapper.INSTANCE.fromDto(employee));
+    employeeService.create(EmployeeMapper.INSTANCE.toDto(employee));
+    verify(employeeRepo, times(1)).addEmployee(employee);
   }
 
   @Test
   void updateEmployee() {
     Employee employee = Employee.builder().department(Department.builder().departmentId(MOCKED_ID1).build()).employeeId(MOCKED_ID1).build();
+    when(employeeRepo.updateEmployee(employee)).thenReturn(employee);
 
-    employeeService.updateEmployee(EmployeeMapper.INSTANCE.toDtoWithId(employee));
+    employeeService.update(EmployeeMapper.INSTANCE.toDtoWithId(employee));
     verify(employeeRepo, times(1)).updateEmployee(employee);
   }
 
   @Test
   void deleteEmployee() {
-    employeeService.deleteEmployee(MOCKED_ID1);
+    employeeService.deleteById(MOCKED_ID1);
     verify(employeeRepo, times(1)).deleteEmployee(MOCKED_ID1);
   }
 }

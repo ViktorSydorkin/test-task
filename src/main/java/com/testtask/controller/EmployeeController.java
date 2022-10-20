@@ -1,7 +1,7 @@
 package com.testtask.controller;
 
-import com.testtask.entity.dto.EmployeeDTO;
-import com.testtask.entity.dto.EmployeeDTOWithId;
+import com.testtask.entity.dto.EmployeePostDto;
+import com.testtask.entity.dto.EmployeeDto;
 import com.testtask.service.inter.EmployeeService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -35,8 +35,8 @@ public class EmployeeController {
       paramType = "path")
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/{id}")
-  public EmployeeDTOWithId getEmployeeById(@PathVariable long id) {
-    return employeeService.getEmployeeById(id);
+  public EmployeeDto findById(@PathVariable long id) {
+    return employeeService.findById(id);
   }
 
   @ApiOperation(
@@ -51,8 +51,8 @@ public class EmployeeController {
       paramType = "query")
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/search")
-  public List<EmployeeDTOWithId> getEmployeeByName(@RequestParam("name") @NotNull String name) {
-    return employeeService.getEmployeesByName(name);
+  public List<EmployeeDto> findByName(@RequestParam("name") @NotNull String name) {
+    return employeeService.findByName(name);
   }
 
   @ApiOperation(
@@ -77,11 +77,11 @@ public class EmployeeController {
         paramType = "query")
   })
   @ResponseStatus(HttpStatus.OK)
-  @GetMapping()
-  public List<EmployeeDTOWithId> getAllEmployees(
+  @GetMapping
+  public List<EmployeeDto> findAll(
       @RequestParam(defaultValue = "0") @PositiveOrZero int page,
       @RequestParam(defaultValue = "5") @Positive int amount) {
-    return employeeService.getAllEmployees(page, amount);
+    return employeeService.findAll(page, amount);
   }
 
   @ApiOperation(
@@ -90,9 +90,9 @@ public class EmployeeController {
       httpMethod = "PUT",
       produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseStatus(HttpStatus.OK)
-  @PutMapping()
-  public EmployeeDTOWithId updateEmployee(@RequestBody @Valid EmployeeDTOWithId employeeDTOWithId) {
-    return employeeService.updateEmployee(employeeDTOWithId);
+  @PutMapping
+  public EmployeeDto update(@RequestBody @Valid EmployeeDto employeeDto) {
+    return employeeService.update(employeeDto);
   }
 
   @ApiOperation(
@@ -101,9 +101,9 @@ public class EmployeeController {
       httpMethod = "POST",
       produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseStatus(HttpStatus.CREATED)
-  @PostMapping()
-  public EmployeeDTOWithId addEmployee(@RequestBody @Valid EmployeeDTO employeeDTO) {
-    return employeeService.addEmployee(employeeDTO);
+  @PostMapping
+  public EmployeeDto create(@RequestBody @Valid EmployeePostDto employeePostDto) {
+    return employeeService.create(employeePostDto);
   }
 
   @ApiOperation(
@@ -118,7 +118,7 @@ public class EmployeeController {
       paramType = "path")
   @ResponseStatus(HttpStatus.OK)
   @DeleteMapping("/{id}")
-  public void deleteEmployee(@PathVariable @Positive long id) {
-    employeeService.deleteEmployee(id);
+  public void deleteById(@PathVariable @Positive long id) {
+    employeeService.deleteById(id);
   }
 }

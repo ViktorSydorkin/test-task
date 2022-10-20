@@ -1,7 +1,7 @@
 package com.testtask.service.impl;
 
-import com.testtask.entity.dto.DepartmentDTO;
-import com.testtask.entity.dto.DepartmentDTOWithId;
+import com.testtask.entity.dto.DepartmentDto;
+import com.testtask.entity.dto.DepartmentPostDto;
 import com.testtask.entity.mappers.DepartmentMapper;
 import com.testtask.repository.inter.DepartmentRepo;
 import com.testtask.service.inter.DepartmentService;
@@ -19,13 +19,13 @@ public class DepartmentServiceImpl implements DepartmentService {
   private final DepartmentRepo departmentRepo;
 
   @Override
-  public DepartmentDTOWithId getDepartmentById(long id) {
+  public DepartmentDto findById(long id) {
     log.info("Department is going to be found by id");
     return DepartmentMapper.INSTANCE.toDtoWithId(departmentRepo.getDepartmentById(id));
   }
 
   @Override
-  public List<DepartmentDTOWithId> getAllDepartments() {
+  public List<DepartmentDto> findAll() {
     log.info("List of departments is going to be obtained");
     return departmentRepo.getAllDepartments().stream()
         .map(DepartmentMapper.INSTANCE::toDtoWithId)
@@ -33,22 +33,22 @@ public class DepartmentServiceImpl implements DepartmentService {
   }
 
   @Override
-  public DepartmentDTOWithId addDepartment(DepartmentDTO departmentDTO) {
+  public DepartmentDto create(DepartmentPostDto departmentPostDto) {
     log.info("Department is going to be added");
     return DepartmentMapper.INSTANCE.toDtoWithId(
-        departmentRepo.addDepartment(DepartmentMapper.INSTANCE.fromDto(departmentDTO)));
+        departmentRepo.addDepartment(DepartmentMapper.INSTANCE.fromDto(departmentPostDto)));
   }
 
   @Override
-  public DepartmentDTOWithId updateDepartment(DepartmentDTOWithId departmentDTOWithId) {
+  public DepartmentDto update(DepartmentDto departmentDto) {
     log.info("Department is going to be updated");
     return DepartmentMapper.INSTANCE.toDtoWithId(
         departmentRepo.updateDepartment(
-            DepartmentMapper.INSTANCE.fromDtoWithId(departmentDTOWithId)));
+            DepartmentMapper.INSTANCE.fromDtoWithId(departmentDto)));
   }
 
   @Override
-  public void deleteDepartment(long id) {
+  public void deleteById(long id) {
     log.info("Department is going to be removed");
     departmentRepo.deleteDepartment(id);
   }

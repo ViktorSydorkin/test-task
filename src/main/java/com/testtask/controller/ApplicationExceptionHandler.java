@@ -1,4 +1,4 @@
-package com.testtask.util;
+package com.testtask.controller;
 
 import com.testtask.exception.EntityAlreadyExistsException;
 import com.testtask.exception.NoSuchEntityException;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j
 @RestControllerAdvice
-public class RuntimeExceptionHandler {
+public class ApplicationExceptionHandler {
   @ExceptionHandler(NoSuchEntityException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public String noSuchEntityExceptionHandler(NoSuchEntityException noSuchEntityException) {

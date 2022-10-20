@@ -1,4 +1,4 @@
-package com.testtask.util;
+package com.testtask.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
