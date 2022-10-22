@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserPostDto {
+public class AuthenticatedUser {
+    public long userId;
     public String username;
     public String email;
-    public String password;
+    public boolean enabled;
+    public String token;
 }

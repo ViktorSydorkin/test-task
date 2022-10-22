@@ -15,4 +15,5 @@ public class UserDto {
   public String email;
   public String password;
   public boolean enabled;
+  public String token;
 }

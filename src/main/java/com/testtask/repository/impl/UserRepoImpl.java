@@ -47,7 +47,7 @@ public class UserRepoImpl implements UserRepo {
       user.setUserId(Objects.requireNonNull(keyHolder.getKey()).longValue());
       return user;
     } catch (DataAccessException dataAccessException) {
-      throw new EntityAlreadyExistsException();
+      throw new EntityAlreadyExistsException("Entity with such email already exists");
     }
   }
 }
