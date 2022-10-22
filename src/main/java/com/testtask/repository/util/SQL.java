@@ -14,4 +14,7 @@ public interface SQL {
     String ADD_DEPARTMENT = "INSERT INTO departments (department_name) VALUES (:name);";
     String UPDATE_DEPARTMENT = "UPDATE departments SET department_name =:name WHERE department_id =:id;";
     String DELETE_DEPARTMENT = "DELETE FROM departments WHERE department_id =:id;";
+    /*QUERIES FOR USER*/
+    String GET_USER_BY_EMAIL = "SELECT * FROM users WHERE email =:email;";
+    String ADD_USER = "INSERT INTO users (username, email, password, enabled) VALUES (:username, :email, :password, :enabled);";
 }

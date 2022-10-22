@@ -64,9 +64,12 @@ public class DepartmentRepoImpl implements DepartmentRepo {
     KeyHolder keyHolder = new GeneratedKeyHolder();
     SqlParameterSource params =
         new MapSqlParameterSource().addValue("name", department.getDepartmentName());
-    if (jdbcTemplate.update(SQL.ADD_DEPARTMENT, params, keyHolder, new String[] {"Id"}) == 0)
+    try{
+      jdbcTemplate.update(SQL.ADD_DEPARTMENT, params, keyHolder, new String[] {"Id"});
+    } catch (DataAccessException dataAccessException){
       throw new EntityAlreadyExistsException(
-          "The department with id " + department.getDepartmentId() + " already exists");
+              "The department with name " + department.getDepartmentName() + " already exists");
+    }
     department.setDepartmentId(Objects.requireNonNull(keyHolder.getKey()).longValue());
     return department;
   }
