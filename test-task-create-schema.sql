@@ -29,7 +29,7 @@ CREATE TABLE `departments` (
   `department_name` varchar(45) NOT NULL,
   PRIMARY KEY (`department_id`),
   UNIQUE KEY `department_name_UNIQUE` (`department_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,6 +69,34 @@ LOCK TABLES `employees` WRITE;
 INSERT INTO `employees` VALUES (2,'Erik',1,2),(3,'Don',1,3),(4,'Peter',0,2),(8,'Test-ch',0,2);
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `user_id` bigint NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(65) NOT NULL,
+  `enabled` tinyint NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Test','email','12345',1),(2,'Test','2','$2a$10$ESR.n/CwBEvF.SSPSvNO2edOo7gLUfX8NyXj/SmlFCU1ey0hF/l5u',1),(3,'22222','22222','$2a$10$Q7aP7hEQCKRDwC3blG4FQOpO/C4UFhenihCYXc6UG9nudLKRZyHbe',1),(8,'333333','333333','$2a$10$PP45CLjpENMlYxgP1JN9HeCHfuR6gA4yhHVEk2O4bSjNz6NZs31Ea',1),(11,'testemail','testemail','$2a$10$3xMnOMlIezii4sHnFcrtM.SPuCoZusjtNZFkH4wy5wbZqqbxlycQC',1);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -79,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-19 22:58:15
+-- Dump completed on 2022-10-22 20:47:24

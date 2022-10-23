@@ -1,7 +1,7 @@
 package com.testtask.controller;
 
-import com.testtask.entity.dto.DepartmentPostDto;
 import com.testtask.entity.dto.DepartmentDto;
+import com.testtask.entity.dto.DepartmentPostDto;
 import com.testtask.service.inter.DepartmentService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -44,7 +44,7 @@ public class DepartmentController {
   @ResponseStatus(HttpStatus.OK)
   @GetMapping
   public List<DepartmentDto> findAll() {
-      return departmentService.findAll();
+    return departmentService.findAll();
   }
 
   @ApiOperation(
@@ -54,9 +54,8 @@ public class DepartmentController {
       produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseStatus(HttpStatus.OK)
   @PutMapping
-  public DepartmentDto update(
-      @RequestBody @Valid DepartmentDto departmentDto) {
-      return departmentService.update(departmentDto);
+  public DepartmentDto update(@RequestBody @Valid DepartmentDto departmentDto) {
+    return departmentService.update(departmentDto);
   }
 
   @ApiOperation(
@@ -67,7 +66,7 @@ public class DepartmentController {
   @ResponseStatus(HttpStatus.CREATED)
   @PostMapping
   public DepartmentDto create(@RequestBody @Valid DepartmentPostDto departmentPostDto) {
-      return departmentService.create(departmentPostDto);
+    return departmentService.create(departmentPostDto);
   }
 
   @ApiOperation(
@@ -81,6 +80,6 @@ public class DepartmentController {
       paramType = "path")
   @DeleteMapping("/{id}")
   public void deleteById(@PathVariable @Positive long id) {
-      departmentService.deleteById(id);
+    departmentService.deleteById(id);
   }
 }

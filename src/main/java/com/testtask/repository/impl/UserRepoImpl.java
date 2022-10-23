@@ -29,7 +29,7 @@ public class UserRepoImpl implements UserRepo {
       return jdbcTemplate.queryForObject(
           SQL.GET_USER_BY_EMAIL, params, new BeanPropertyRowMapper<>(User.class));
     } catch (DataAccessException dataAccessException) {
-      throw new NoSuchEntityException();
+      throw new NoSuchEntityException("Entity with email" + email + " doesn't exists");
     }
   }
 

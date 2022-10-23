@@ -1,7 +1,7 @@
 package com.testtask.controller;
 
-import com.testtask.entity.dto.EmployeePostDto;
 import com.testtask.entity.dto.EmployeeDto;
+import com.testtask.entity.dto.EmployeePostDto;
 import com.testtask.service.inter.EmployeeService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

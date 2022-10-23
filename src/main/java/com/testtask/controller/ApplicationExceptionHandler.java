@@ -1,9 +1,6 @@
 package com.testtask.controller;
 
-import com.testtask.exception.ApiError;
-import com.testtask.exception.EntityAlreadyExistsException;
-import com.testtask.exception.NoSuchEntityException;
-import com.testtask.exception.RepositoryException;
+import com.testtask.exception.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -38,7 +35,7 @@ public class ApplicationExceptionHandler {
 
   @ExceptionHandler(RepositoryException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
-  public ApiError repositoryException(RepositoryException repositoryException) {
+  public ApiError repositoryExceptionHandler(RepositoryException repositoryException) {
     log.error(
         "Exception was caught {} {} {} {}",
         repositoryException,
@@ -49,5 +46,12 @@ public class ApplicationExceptionHandler {
         HttpStatus.BAD_REQUEST,
         repositoryException.getMessage() + ". " + repositoryException.getCause().getMessage(),
         LocalDateTime.now());
+  }
+
+  @ExceptionHandler(TokenException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public ApiError tokenExceptionHandler(TokenException tokenException) {
+    log.error("Token exception was caught {}", tokenException.getMessage());
+    return new ApiError(HttpStatus.BAD_REQUEST, tokenException.getMessage(), LocalDateTime.now());
   }
 }

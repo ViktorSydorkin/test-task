@@ -30,7 +30,7 @@ public class JwtUtils {
     User userPrincipal = (User) authentication.getPrincipal();
 
     return Jwts.builder()
-        .setSubject((userPrincipal.getUsername()))
+        .setSubject((userPrincipal.getEmail()))
         .setIssuedAt(new Date())
         .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
         .signWith(SignatureAlgorithm.HS256, jwtSecret)
@@ -48,7 +48,7 @@ public class JwtUtils {
     return false;
   }
 
-  public String getUserNameFromJwtToken(String jwt) {
+  public String getEmailFromJwtToken(String jwt) {
     return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(jwt).getBody().getSubject();
   }
 }

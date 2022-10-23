@@ -1,21 +1,24 @@
 package com.testtask.controller;
 
 import com.testtask.entity.User;
+import com.testtask.entity.dto.AuthenticatedUser;
 import com.testtask.entity.dto.AuthenticationDto;
-import com.testtask.entity.dto.UserDto;
+import com.testtask.entity.dto.RegisteredUser;
 import com.testtask.entity.dto.UserPostDto;
-import com.testtask.exception.EntityAlreadyExistsException;
+import com.testtask.entity.mappers.UserMapper;
 import com.testtask.security.JwtUtils;
 import com.testtask.service.impl.UserServiceImpl;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -26,13 +29,16 @@ public class AuthenticationController {
 
   private final UserServiceImpl userService;
 
-  private final PasswordEncoder passwordEncoder;
-
   private final JwtUtils jwtUtils;
 
+  @ApiOperation(
+          value = "Sign in",
+          notes = "Check user's existence in the DB and return token if it is",
+          httpMethod = "POST",
+          produces = MediaType.APPLICATION_JSON_VALUE)
   @PostMapping("/signin")
   @ResponseStatus(HttpStatus.OK)
-  public UserDto authUser(@RequestBody AuthenticationDto authenticationDto) {
+  public AuthenticatedUser authUser(@RequestBody @Valid AuthenticationDto authenticationDto) {
 
     Authentication authentication =
         authenticationManager.authenticate(
@@ -44,7 +50,7 @@ public class AuthenticationController {
 
     User user = (User) authentication.getPrincipal();
 
-    return UserDto.builder()
+    return AuthenticatedUser.builder()
         .userId(user.getUserId())
         .username(user.getUsername())
         .email(user.getEmail())
@@ -52,10 +58,14 @@ public class AuthenticationController {
         .token(jwt)
         .build();
   }
-
+  @ApiOperation(
+          value = "Sign up",
+          notes = "Save user to the DB",
+          httpMethod = "POST",
+          produces = MediaType.APPLICATION_JSON_VALUE)
   @PostMapping("/signup")
   @ResponseStatus(HttpStatus.CREATED)
-  public UserDto registerUser(@RequestBody UserPostDto userPostDto) {
-    return userService.create(userPostDto);
+  public RegisteredUser registerUser(@RequestBody @Valid UserPostDto userPostDto) {
+    return UserMapper.INSTANCE.toRegisteredUser(userService.create(userPostDto));
   }
 }
